@@ -6,6 +6,8 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Book from './Components/Book/Book';
 import Header from './Components/Header/Header';
+import NotFound from './Components/NotFound/NotFound';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
@@ -15,7 +17,12 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/bookNow" element={<Book/>}/>
+          <Route path="/bookNow" element={
+            <PrivateRoute>
+              <Book/>
+            </PrivateRoute>
+          }/>
+          <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </div>

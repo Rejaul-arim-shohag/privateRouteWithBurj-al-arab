@@ -3,7 +3,7 @@ import React from 'react';
 const Book = () => {
     return (
         <div>
-            <h1>This is Book</h1>
+            <h1 style={{color: 'red'}}>our book page is secret, </h1>
         </div>
     );
 };
